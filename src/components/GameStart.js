@@ -5,7 +5,8 @@ import API from '../utils/API'
 class GameStart extends Component  {
     state = {
         query : "",
-        cardArr : []
+        cardArr : [],
+        cardsGuessed : []
     }
     handleInputChange = event => {
         this.setState({query : event.target.value})
@@ -18,32 +19,40 @@ class GameStart extends Component  {
             .then(res => {console.log(res)
                 const items = res.data.data;
                 const cardList = items.map(item => {
-                    // console.log(item.id);
+                    const rObj = {
+                        id : item.id,
+                        url : item.embed_url
+                    };
+                    return rObj;
                 })
-                console.log(cardList);
-                // items.map(item => {
-                //     this.state.cardArr.id = item.id;
-                //     this.state.cardArr.img = item.url;
-                //     console.log(this.state.cardArr);
-                //     // <Card
-                //     //     image = 
-                //     // />
+                this.setState({cardArr : cardList});
+                console.log(this.state.cardArr);
 
-                // })
-                
             })
             
             .catch(err => console.log(err));
-
-            
         }
     }
-
     render(){
         return (
             <Fragment>
                 <input className="search-query" onChange={this.handleInputChange}/>
                 <button className="formSubmit" onClick={this.handleFormSubmit}>Start Game</button>
+                
+                {this.state.cardArr.length ? (
+                    <div className="gameWrap">
+                    {this.state.cardArr.map(card => (
+                        <Card 
+                            key={card.id}
+                            url={card.url}
+                        />
+                    ))}
+                </div>
+                ) : (
+                    <h2>Search for gifs to start your game!</h2>
+                )
+                }
+
             </Fragment>
         )
     }
