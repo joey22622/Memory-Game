@@ -26,3 +26,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.card{
+  width: 100px;
+  height: 100px;
+  background: rgba(0,0,0,.9);
+  margin: 10px;
+  cursor: pointer;
+}
+.gameWrap{
+  display: flex;
+  flex-wrap: wrap;
+}
