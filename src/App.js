@@ -27,7 +27,6 @@ loadGame(query){
     return (
       <div className="content-wrap">
         <GameStart/>
-        <h2>dummy text</h2>
       </div>
     );
   }

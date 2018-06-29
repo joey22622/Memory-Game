@@ -21,7 +21,10 @@ class GameStart extends Component  {
                 const cardList = items.map(item => {
                     const rObj = {
                         id : item.id,
-                        url : item.embed_url
+                        url : item.images.downsized.url,
+                        title : item.title,
+                        highScore : 0,
+                        gamesPlayed : 0
                     };
                     return rObj;
                 })
@@ -36,9 +39,15 @@ class GameStart extends Component  {
     render(){
         return (
             <Fragment>
-                <input className="search-query" onChange={this.handleInputChange}/>
-                <button className="formSubmit" onClick={this.handleFormSubmit}>Start Game</button>
-                
+                <div className="header-wrap">
+                    <p className="games-played">Games Played <span>{this.state.gamesPlayed}</span></p>
+                    <div className="header-center">
+                        <input className="search-query" onChange={this.handleInputChange}/>
+                        <button className="formSubmit" onClick={this.handleFormSubmit}>Start Game</button>
+                    </div>
+                    <p className="high-score"><span> {this.state.highScore} </span> High Score</p>
+
+                </div>
                 {this.state.cardArr.length ? (
                     <div className="gameWrap">
                     {this.state.cardArr.map(card => (
