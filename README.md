@@ -2,6 +2,8 @@
 
 Card randomizing, GIF-themed memory game
 
+![App Tutorial](GIF-Memory-Game.gif)
+
 **Gameplay Description**
 
 * To initiate gameplay, user searches for a type of GIF which queries the GIPHY API, returning 12 results that will be printed to the page as cards.
