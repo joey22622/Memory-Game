@@ -1,4 +1,10 @@
 
+body{
+font-family: sans-serif;
+width: 100vw;
+min-height: 100vh;
+}
+
 .content-wrap{
   display: flex;
   flex-direction: column;
@@ -7,24 +13,46 @@
 .header-wrap{
   display: flex;
   justify-content: space-between;
-  background: rgba(0,0,0,.9);
-  align-items: center;
-  border-top: solid white 10px;
+  align-items: stretch;
+}
+.header-center,
+.header-side{
+  box-shadow: 1px 10px 15px rgba(0,20,20, .5)
 }
 .header-center{
-  background:rgba(50,150,255, .4);
-  border-left: solid white 10px;
-  border-right: solid white 10px;
+  background:rgba(0,120,150, 1);
+  margin: 0 10px;
+  /* border-left: solid white 10px;
+  border-right: solid white 10px; */
   padding: 1rem;
+}
+.header-side{
+  background: rgba(0,0,0,.9);
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-grow: 100;
+}
+.score{
+  justify-content: flex-end;
+  flex-grow: 100;
+}
+.high-score{
+  justify-content: flex-start;
+  flex-grow: 100;
 }
 
 .content-wrap h2{
   opacity: 1;
-  margin-top: 3rem;
   text-align: center;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: .1rem;
+  max-width: 80rem;
+  padding: 2rem 2.5rem;
+  background: white;
+  box-shadow: 1px 5px 25px rgba(0,20,20, .1);
+  margin: 3rem auto;
 
 }
 input,
@@ -32,11 +60,13 @@ button{
   height: 1.4rem;
   padding: .3rem .8rem;
   border: none;
+  font-size: 1rem;
   line-height: 1rem;
   margin: 0 1rem;
   box-sizing: unset;
   border: solid 2px rgba(0,0,0, 1);
   border-radius: 5px;
+  text-align: center;
 }
 
 button{
@@ -69,8 +99,11 @@ button:hover{
 }
 
 
+.gameWrap{
+  box-shadow: 1px 10px 15px rgba(0,20,20, .5);
+  margin-bottom: 2rem;
 
-
+}
 
 .card{
   width: 13vw;
@@ -78,7 +111,7 @@ button:hover{
   background: rgba(0,0,0,.9);
   cursor: pointer;
   display: flex;
-  justify-content: space;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
   transition: .2s;

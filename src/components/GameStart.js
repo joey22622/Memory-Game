@@ -14,6 +14,16 @@ class GameStart extends Component  {
     handleInputChange = event => {
         this.setState({query : event.target.value})
         console.log(this.state.query);
+        console.log(event.target.value);
+        console.log(event.keyCode);
+        if(event.keyCode === "a"){
+            // this.handleFormSubmit(event)
+        }
+    }
+    submitCheck = event => {
+        if(event.key === "Enter"){
+            this.handleFormSubmit(event);
+        }
     }
     handleFormSubmit = event => {
         event.preventDefault();
@@ -32,7 +42,11 @@ class GameStart extends Component  {
                     };
                     return rObj;
                 })
-                this.setState({cardArr : cardList, cardsRemaining : cardList});
+                this.setState({
+                    cardArr : cardList, 
+                    cardsRemaining : cardList,
+                    score : 0
+            });
                 console.log(this.state.cardsRemaining);
 
             })
@@ -74,13 +88,16 @@ class GameStart extends Component  {
         return (
             <Fragment>
                 <div className="header-wrap">
-                    <p className="games-played">Score <span>{this.state.score}</span></p>
+                    <div className="header-side">
+                        <p className="score">Score <span>{this.state.score}</span></p>
+                    </div>
                     <div className="header-center">
-                        <input className="search-query" onChange={this.handleInputChange}/>
+                        <input className="search-query" onKeyPress={this.submitCheck} onChange={this.handleInputChange}/>
                         <button className="formSubmit" onClick={this.handleFormSubmit}>Start Game</button>
                     </div>
-                    <p className="high-score"><span> {this.state.highScore} </span> High Score</p>
-
+                    <div className="header-side">
+                    <p className="high-score"><span> {this.state.highScore} </span> Record</p>
+                    </div>
                 </div>
                 {this.state.cardArr.length ? (
                     <div className="gameWrap">
