@@ -92,7 +92,7 @@ class GameStart extends Component  {
                         <p className="score">Score <span>{this.state.score}</span></p>
                     </div>
                     <div className="header-center">
-                        <input className="search-query" onKeyPress={this.submitCheck} onChange={this.handleInputChange}/>
+                        <input className="search-query" placeholder="SEARCH GIFS" onKeyPress={this.submitCheck} onChange={this.handleInputChange}/>
                         <button className="formSubmit" onClick={this.handleFormSubmit}>Start Game</button>
                     </div>
                     <div className="header-side">
