@@ -18,6 +18,7 @@ Card randomizing, GIF-themed memory game
 
 **FILE STRUCTURE**
 
+```
 .
 ├── README.md
 ├── build
@@ -58,3 +59,4 @@ Card randomizing, GIF-themed memory game
 │       ├── main.87a7d0e4.js
 │       └── main.87a7d0e4.js.map
 └── yarn.lock
+```
