@@ -1,21 +1,26 @@
-# Memory-Game
+# GIF Memory Game
 
-Card randomizing, GIF-themed memory game
+**DESCRIPTION:** Card randomizing, GIF-themed memory game.
 
 ![App Tutorial](GIF-Memory-Game.gif)
 
-**Gameplay Description**
+**GAME PLAY**
 
 * To initiate gameplay, user searches for a type of GIF which queries the GIPHY API, returning 12 results that will be printed to the page as cards.
 * Once cards are printed to the page, the user aims to click as many cards as possible without clicking the same one twice.
 * After every click the cards will reprint in a new random order.  Correct clicks will incrementally increase the score while incorrect clicks will reset the score to zero.
-* If the score becomes greater than the high score, high score will equal the current score
+* If the score becomes greater than the high score, high score will equal the current score.
 * At any time, the user can initiate a new search for GIFS that will repopulate the page.
 
 
-**Code Details**
-* This app uses the following languages/libraries: *CSS, Javascript, React, HTML*
-* API calls are made to the GIPHY API
+**PROGRAMMING / FUNCTIONALITY**
+
+* App is built using the following languages/libraries:
+  - *HTML* 
+  - *CSS* 
+  - *JavaScript*
+  - *React.js*
+* API calls are made to the GIPHY API.
 
 
 **FILE STRUCTURE**
